@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link" href="bienvenida.html">Inicio</a>
+                  <a class="nav-link active" aria-current="page" href="#">Registro de inventario</a>
+                  <!-- <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link disabled">Disabled</a> -->
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <form>
+                        <div class="mb-3">
+                          <label for="producto" class="form-label">Producto</label>
+                          <input type="text" class="form-control" id="producto" name="producto" aria-describedby="ayudaProducto">
+                          <div id="ayudaProducto" class="form-text">Ingrese aquí el nombre de su producto</div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="cantidad" class="form-label">Cantidad</label>
+                          <input type="number" class="form-control" id="exampleInputPassword1" name="cantidad">
+                        </div>
+                        <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="importado" name="importado">
+                          <label class="form-check-label" for="importado">¿Es importado?</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                      </form>
+                </div>
+                <div class="col-8">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Es importado</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Tenis Nike</td>
+                            <td>7</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Tenis Puma</td>
+                            <td>7</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Tenis Jordan</td>
+                            <td>2</td>
+                            <td>Si</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="container">
+        <p class="float-end">
+            <a href="#">Regresa al inicio</a>
+        </p>
+        <p>&copy; 2023 Aplicaciones Web &middot;
+            <a href="https://utez.edu.mx">UTEZ</a>
+            &middot;
+            <a href="#">Bonzi Buddy Team</a>
+        </p>
+    </footer>
+    <script type="script" src="js/bootstrap.js"></script>
+</body>
+</html>
