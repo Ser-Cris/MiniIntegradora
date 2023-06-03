@@ -42,23 +42,41 @@
       <div class="col col-md-4">
         <br><br>
         <h1>
-          <center>Nueva mercancia</center>
+          <center>Nueva Artículo</center>
         </h1>
         <form action="#" method="get">
           <div class="mb-3">
-            <label for="nombreMerca" class="form-label">Nombre</label>
-            <input type="text" class="form-control" name="nombreMerca" id="nombreMerca" aria-describedby="ayudaMerca">
-            <div id="ayudaMerca" class="form-text">Aqui va el nombre del producto nuevo.</div>
-          </div>
-          <div class="mb-3">
-            <label for="numeroMerca" class="form-label">Cantidad</label>
+            <label for="numeroMerca" class="form-label">Nombre del Artículo:</label>
             <input type="number" class="form-control" name="numeroMerca" id="numeroMerca"
               aria-describedby="ayudaNMerca">
-            <div id="ayudaNMerca" class="form-text">Aqui va la cantidad del producto nuevo.</div>
+            <div id="ayudaNMerca" class="form-text">Aqui va el nombre del articulo nuevo.</div>
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" name="importado" id="importado">
-            <label class="form-check-label" for="importado">Es importado?</label>
+          <div class="mb-3">
+            <label for="nombreMerca" class="form-label">Tipo de Artículo:</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>--Selecciona un tipo de artículo--</option>
+              <option value="1">Inmobiliario</option>
+              <option value="2">Equipo Electrónico</option>
+            </select>
+            <div id="ayudaMerca" class="form-text">Aqui va el tipo de articulo.</div>
+          </div>
+          <div class="mb-3">
+            <label for="numeroMerca" class="form-label">Marca:</label>
+            <input type="number" class="form-control" name="numeroMerca" id="numeroMerca"
+              aria-describedby="ayudaNMerca">
+            <div id="ayudaNMerca" class="form-text">Marca del artículo.</div>
+          </div>
+          <div class="mb-3">
+            <label for="nombreMerca" class="form-label">Ubicación:</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>--Selecciona una ubicación--</option>
+              <option value="1">CC10</option>
+              <option value="2">Aula doble</option>
+              <option value="3">Cableado</option>
+              <option value="4">Bodega Netacad</option>
+              <option value="5">Salón de maestros</option>
+            </select>
+            <div id="ayudaMerca" class="form-text">Ubicación del artículo.</div>
           </div>
           <button id="registro" type="submit" class="btn btn-primary">Registrar</button>
         </form>
