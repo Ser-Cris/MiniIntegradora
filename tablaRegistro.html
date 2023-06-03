@@ -47,13 +47,13 @@
         <form action="#" method="get">
           <div class="mb-3">
             <label for="numeroMerca" class="form-label">Nombre del Artículo:</label>
-            <input type="number" class="form-control" name="numeroMerca" id="numeroMerca"
+            <input type="text" class="form-control" name="nombreArt" id="nombreArt"
               aria-describedby="ayudaNMerca">
             <div id="ayudaNMerca" class="form-text">Aqui va el nombre del articulo nuevo.</div>
           </div>
           <div class="mb-3">
-            <label for="nombreMerca" class="form-label">Tipo de Artículo:</label>
-            <select class="form-select" aria-label="Default select example">
+            <label for="tipoArt" class="form-label">Tipo de Artículo:</label>
+            <select class="form-select" aria-label="Default select example" name="tipoArt" id="tipoArt">
               <option selected>--Selecciona un tipo de artículo--</option>
               <option value="1">Inmobiliario</option>
               <option value="2">Equipo Electrónico</option>
@@ -61,14 +61,14 @@
             <div id="ayudaMerca" class="form-text">Aqui va el tipo de articulo.</div>
           </div>
           <div class="mb-3">
-            <label for="numeroMerca" class="form-label">Marca:</label>
-            <input type="number" class="form-control" name="numeroMerca" id="numeroMerca"
+            <label for="marcaArt" class="form-label">Marca:</label>
+            <input type="text" class="form-control" name="marcaArt" id="marcaArt"
               aria-describedby="ayudaNMerca">
             <div id="ayudaNMerca" class="form-text">Marca del artículo.</div>
           </div>
           <div class="mb-3">
-            <label for="nombreMerca" class="form-label">Ubicación:</label>
-            <select class="form-select" aria-label="Default select example">
+            <label for="ubiArt" class="form-label">Ubicación:</label>
+            <select class="form-select" aria-label="Default select example" name="ubiArt" id="ubiArt">
               <option selected>--Selecciona una ubicación--</option>
               <option value="1">CC10</option>
               <option value="2">Aula doble</option>
@@ -92,31 +92,39 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Número en Inv.</th>
-              <th scope="col">Importado</th>
-              <th scope="col">Acción</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Marca</th>
+              <th scope="col">Ubicación</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Accion</th>
             </tr>
           </thead>
           <tbody id="cuerpoTabla">
             <tr>
               <th scope="row">1</th>
-              <td>Peluche gato</td>
-              <td>10</td>
-              <td>Si</td>
+              <td>PC</td>
+              <td>Equipo Electrónico</td>
+              <td>HP</td>
+              <td>CC10</td>
+              <td>Activo</td>
               <td><a onclick="eliminar(this);">Eliminar</a></td>
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>Peluche perro</td>
-              <td>8</td>
-              <td>No</td>
+              <td>Laptop</td>
+              <td>Equipo Electrónico</td>
+              <td>DELL</td>
+              <td>Bodega Netacad</td>
+              <td>Activo</td>
               <td><a onclick="eliminar(this);">Eliminar</a></td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td>Peluche mapache</td>
-              <td>4</td>
-              <td>No</td>
+              <td>Silla</td>
+              <td>Inmobiliario</td>
+              <td>N/A</td>
+              <td>Aula Doble</td>
+              <td>Activo</td>
               <td><a onclick="eliminar(this);">Eliminar</a></td>
             </tr>
           </tbody>
@@ -141,14 +149,23 @@
       Array.from(datos).forEach(element => {
         console.log(element.innerHTML);
       });*/
-
-      var nombreMerca = getParameter("nombreMerca");
-      var numeroMerca = getParameter("numeroMerca");
-      var importado = getParameter("importado") == "on";
+      var arrTipo= ["Inmobiliario","Equipo electrónico"];
+      var arrUbi= ["CC10","Aula doble","Cableado","Bodega Netacad", "Salon de Maestros"];
+      var nombreArt = getParameter("nombreArt");
+      var tipoArt = getParameter("tipoArt");
+      var marcaArt = getParameter("marcaArt");
+      var ubiArt = getParameter("ubiArt");
+      var estado = "Activo";
       i = 4;
 
-      if (nombreMerca != null && numeroMerca != null) {
-        if (nombreMerca != "" && numeroMerca != "") {
+      var aux1=  tipoArt;
+      var aux2= ubiArt;
+      
+      tipoArt = arrTipo[aux1-1];
+      ubiArt = arrUbi[aux2-1];
+
+      if ((nombreArt != null && marcaArt != null) &&( tipoArt != null && ubiArt != null)) {
+        if ((nombreArt != "" && marcaArt != "") &&( tipoArt != "" && ubiArt != "")) {
           //alert("Se registro un numevo articulo");
           tabla = document.getElementById("cuerpoTabla");
           nuevoRegistro = document.createElement("tr");
@@ -158,17 +175,19 @@
           id.scope = "row";
 
           nombre = document.createElement("td");
-          nombre.innerHTML = nombreMerca;
+          nombre.innerHTML = nombreArt;
 
-          numero = document.createElement("td");
-          numero.innerHTML = numeroMerca;
+          tipo = document.createElement("td");
+          tipo.innerHTML = tipoArt;
 
-          importa = document.createElement("td");
-          if (importado) {
-            importa.innerHTML = "Si";
-          } else {
-            importa.innerHTML = "No";
-          }
+          marca = document.createElement("td");
+          marca.innerHTML = marcaArt;
+
+          ubicacion = document.createElement("td");
+          ubicacion.innerHTML = ubiArt;
+
+          estado2 = document.createElement("td");
+          estado2.innerHTML = estado;
 
           elimina = document.createElement("td");
           accion = document.createElement("a");
@@ -178,8 +197,10 @@
 
           nuevoRegistro.appendChild(id);
           nuevoRegistro.appendChild(nombre);
-          nuevoRegistro.appendChild(numero);
-          nuevoRegistro.appendChild(importa);
+          nuevoRegistro.appendChild(tipo);
+          nuevoRegistro.appendChild(marca);
+          nuevoRegistro.appendChild(ubicacion);
+          nuevoRegistro.appendChild(estado2);
           nuevoRegistro.appendChild(elimina)
           tabla.appendChild(nuevoRegistro)
         }
