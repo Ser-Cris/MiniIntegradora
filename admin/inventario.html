@@ -11,6 +11,8 @@
   <style>
     body{
       background: #F1F1F5; /*Verde: #009574 -> #74BEC1; Azul: #002E60 -> #345177 | #516091*/
+      /*background: #1F1F29;
+      color: #F1F1F5;*/ /*Modo oscuro*/
     }
     nav{
       background: #345177;
@@ -70,9 +72,12 @@
       position: sticky;
       top: 0;
       background: #009574;
-      color: white;
+      color: #F1F1F5;
       /*background-color: #6682a0;*/
     }
+    /*.table-dark thead{
+      --bs-table-bg: #009574;
+    } /*Modo oscuro*/
     footer{
       background: #345177;
       /*background-color: #335880;
@@ -146,7 +151,7 @@
       <!-- Lista de inventario vía Finanzas -->
       <div class="tbl-fixed col col-6">
         
-        <table class="table table-striped table-hover" id="listaInv">
+        <table class="table table-striped table-hover" id="listaInv"> <!-- class="table-dark" para el modo oscuro -->
           <thead>
             <tr>
               <th scope="col">ID Artículo</th>
@@ -205,7 +210,7 @@
           <div class="content-box">
             <div class="content active">
               
-              <table class="table table-striped table-hover" id="listaInv">
+              <table class="table table-striped table-hover" id="listaInv"> <!-- class="table-dark" para el modo oscuro -->
                 <thead>
                   <tr>
                     <th scope="col">ID Artículo</th>
@@ -230,7 +235,7 @@
             </div>
             <div class="content">
               
-              <table class="table table-striped table-hover" id="listaInv">
+              <table class="table table-striped table-hover" id="listaInv"> <!-- class="table-dark" para el modo oscuro -->
                 <thead>
                   <tr>
                     <th scope="col">ID Artículo</th>

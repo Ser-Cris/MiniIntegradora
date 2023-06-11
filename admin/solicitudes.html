@@ -11,6 +11,8 @@
   <style>
     body{
       background: #F1F1F5; /*Verde: #009574 -> #74BEC1; Azul: #002E60 -> #345177 | #516091*/
+      /*background: #1F1F29;
+      color: #F1F1F5;*/ /*Modo oscuro*/
     }
     nav{
       background: #345177;
@@ -34,6 +36,9 @@
       color: white;
       /*background-color: #6682a0;*/
     }
+    /*.table-dark thead{
+      --bs-table-bg: #009574;
+    }*/ /*Modo oscuro*/
     footer{
       background: #345177;
       /*background-color: #335880;
@@ -99,7 +104,7 @@
       <!-- Lista de inventario vía Finanzas -->
       <div class="tbl-fixed col col-6">
 
-        <table class="table table-striped table-hover" id="tabla">
+        <table class="table table-striped table-hover" id="tabla"> <!-- class="table-dark" para el modo oscuro -->
           <thead>
             <tr>
               <th scope="col">ID Artículo</th>
@@ -153,7 +158,7 @@
       <!-- Solicitudes de préstamo y mantenimiento -->
       <div class="tbl-fixed col col-6">
         
-        <table class="table table-striped table-hover" id="solicitudes">
+        <table class="table table-striped table-hover" id="solicitudes"> <!-- class="table-dark" para el modo oscuro -->
           <thead>
             <tr>
               <th scope="col">#</th>
