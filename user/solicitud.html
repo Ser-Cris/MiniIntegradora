@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SICI &middot; Préstamo</title>
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="icon" href="https://img.icons8.com/external-justicon-lineal-color-justicon/64/
+  external-inventory-business-management-justicon-lineal-color-justicon.png">
+  <style>
+    body{
+      background: #F1F1F5; /*Verde: #009574 -> #74BEC1; Azul: #002E60 -> #345177 | #516091*/
+      /*background: #1F1F29;
+      color: #F1F1F5;*/ /*Modo oscuro*/
+    }
+    nav{
+      background: #345177;
+    }
+    .tbl-container{
+      max-height: fit-content;
+      min-width: fit-content;
+    }
+    .tbl-fixed{
+      overflow-x: scroll;
+      overflow-y: scroll;
+      max-height: 60vh;
+    }
+    table{
+      min-width: max-content;
+    }
+    thead{
+      position: sticky;
+      top: 0;
+      background: #009574;
+      color: white;
+      /*background-color: #6682a0;*/
+    }
+    /*.table-dark thead{
+      --bs-table-bg: #009574;
+    }*/ /*Modo oscuro*/
+    footer{
+      background: #345177;
+      /*background-color: #335880;
+      color: white;*/
+      width: 100%;
+    }
+    a {
+            text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark mb-2">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img width="30" height="30" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/
+                external-inventory-business-management-justicon-lineal-color-justicon.png"
+            class="d-inline-block align-text-top" alt="Logo SICI"/>
+          SICI
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="espacios.html">Préstamos</a>
+            <!-- <a class="nav-link" aria-current="page" href="solicitudes.html">Solicitudes</a> -->
+            <!-- <a class="nav-link disabled">Deshabilitado</a> -->
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="row">
+      <!-- Fomulario para artículos nuevos -->
+      <div class="col col-4">
+        <br>
+        <h1>
+          <center>Nuevo artículo</center>
+        </h1>
+        <form action="#" method="get">
+
+          <div class="mb-3">
+            <label for="idArt" class="form-label">ID Artículo</label>
+            <input type="text" class="form-control" name="idArt" id="idArt" aria-describedby="ayudaIdArt">
+            <div id="ayudaIdArt" class="form-text">Se encuentra en la etiqueta, debajo del código de barras</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="accArt" class="form-label">Acción</label>
+            <select class="form-select" aria-label="Default select example" name="accArt" id="accArt"
+              aria-describedby="ayudaAccArt">
+              <option selected>-- Selecciona el tipo de acción --</option>
+              <option value="1">Préstamo</option>
+              <option value="2">Mantenimiento</option>
+            </select>
+            <div id="ayudaAccArt" class="form-text">Seleccione que tipo de acción desea solicitar</div>
+          </div>
+
+          <button id="registro" type="submit" class="btn btn-success">Enviar solicitud</button>
+
+        </form>
+
+      </div>
+      <!-- Tabla de artículos registrados -->
+      <div class="col col-8">
+        <br>
+        <h1>
+          <center>Lista de solicitudes</center>
+        </h1>
+
+        <table class="table table-striped table-hover" id="tabla"> <!-- class="table-dark" para el modo oscuro -->
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">ID Artículo</th>
+              <th scope="col">Fecha y hora</th>
+              <th scope="col">Estatus</th>
+            </tr>
+          </thead>
+          <tbody id="solicitudes">
+            <tr>
+              <th scope="row">1</th>
+              <td>IEHCNSGB7TBG7</td>
+              <td>07/03/2023 13:10</td>
+              <td>Rechazado</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>BYI8TYBVT7RG7</td>
+              <td>07/03/2023 13:12</td>
+              <td>Aprobado</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>UI8UBCYE5C6EB</td>
+              <td>08/03/2023 10:10</td>
+              <td>Pendiente</td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="fixed-bottom d-flex flex-wrap justify-content-between align-items-center px-4 py-2 border-top text-white">
+    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Integradora &middot; UTEZ</p>
+
+    <a href="http://www.utez.edu.mx/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <img width="100" height="50" src="../img/Logo UTEZ.png" alt="Inicio SICI"/>
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Bonzi Buddy Team</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    getParameter = (key) => {
+      address = window.location.search; // url de la ventana actual
+      // Objeto de tipo URLSearchParams
+      parameterList = new URLSearchParams(address);
+      // Regresa el valor del parámetro “key”
+      return parameterList.get(key);
+    }
+
+    function registrarProducto() {
+
+      /*Obtener los anteriores
+      var datos = document.getElementsByTagName("table")[0].rows;
+      var data = {}
+      Array.from(datos).forEach(element => {
+        console.log(element.innerHTML);
+      });*/
+      var arrTipo = ["Inmobiliario", "Equipo electrónico"];
+      var arrUbi = ["CC10", "Aula doble", "Cableado", "Bodega Netacad", "Salon de Maestros"];
+      var nombreArt = getParameter("nombreArt");
+      var tipoArt = getParameter("tipoArt");
+      var marcaArt = getParameter("marcaArt");
+      var ubiArt = getParameter("ubiArt");
+      var estado = "Activo";
+      i = 2;
+
+      var aux1 = tipoArt;
+      var aux2 = ubiArt;
+
+      tipoArt = arrTipo[aux1 - 1];
+      ubiArt = arrUbi[aux2 - 1];
+
+      if ((nombreArt != null && marcaArt != null) && (tipoArt != null && ubiArt != null)) {
+        if ((nombreArt != "" && marcaArt != "") && (tipoArt != "" && ubiArt != "")) {
+          //alert("Se registro un numevo articulo");
+          tabla = document.getElementById("cuerpoTabla");
+          nuevoRegistro = document.createElement("tr");
+
+          id = document.createElement("th");
+          id.innerHTML = i;
+          id.scope = "row";
+
+          nombre = document.createElement("td");
+          nombre.innerHTML = nombreArt;
+
+          tipo = document.createElement("td");
+          tipo.innerHTML = tipoArt;
+
+          marca = document.createElement("td");
+          marca.innerHTML = marcaArt;
+
+          ubicacion = document.createElement("td");
+          ubicacion.innerHTML = ubiArt;
+
+          estado2 = document.createElement("td");
+          estado2.innerHTML = estado;
+
+          elimina = document.createElement("td");
+          accion = document.createElement("a");
+          accion.innerHTML = "Eliminar";
+          accion.addEventListener("click", () => { eliminar(accion); });
+          elimina.appendChild(accion);
+
+          nuevoRegistro.appendChild(id);
+          nuevoRegistro.appendChild(nombre);
+          nuevoRegistro.appendChild(tipo);
+          nuevoRegistro.appendChild(marca);
+          nuevoRegistro.appendChild(ubicacion);
+          nuevoRegistro.appendChild(estado2);
+          nuevoRegistro.appendChild(elimina)
+          tabla.appendChild(nuevoRegistro)
+        }
+      }
+
+    }
+
+    window.addEventListener("load", registrarProducto);
+
+    function eliminar(element) {
+      element.parentElement.parentElement.remove();
+    }
+  </script>
+  <script src="js/bootstrap.js"></script>
+</body>
+
+</html>
