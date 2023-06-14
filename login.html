@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SICI &middot; Inicio de sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="icon" href="https://img.icons8.com/external-justicon-lineal-color-justicon/64/
+        external-inventory-business-management-justicon-lineal-color-justicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /*background: #F1F1F5;*/
+            background: url('https://morelos.gob.mx/sites/default/files/fotos-boletines/WhatsApp%20Image%202022-06-18%20at%208.56.34%20AM.jpeg') no-repeat;
+            background-size: cover;
+            /*background-position: center;*/
+            /*Verde: #009574 -> #74BEC1; Azul: #002E60 -> #345177 | #516091*/
+            /*background: #1F1F29;
+            color: #F1F1F5;*/
+            /*Modo oscuro*/
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: center;    
+        }
+        header {
+            background: #345177;
+        }
+        footer {
+            background: #345177;
+            color: #F1F1F5;
+            width: 100%;
+        }
+        a {
+            text-decoration: none;
+        }
+        .wrapper {
+            position: relative;
+            top: 155px;
+            width: 400px;
+            height: 390px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .5);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .avatar {
+            width: 150px;
+            height: 75px;
+            position: absolute;
+            top: 8px;
+        }
+        .wrapper .form-box {
+            width: 100%;
+            padding: 40px;
+            margin-top: 80px;
+        }
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            border-bottom: 2px solid;
+            margin: 30px 0;
+        }
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: #162938;
+            font-weight: 500;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .input-box input:focus~label,
+        .input-box input:valid~label {
+            top: -5px;
+        }
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #162938;
+            font-weight: 600;
+            padding: 0 35px 0 5px;
+        }
+        .input-box .icon {
+            position: absolute;
+            right: 8px;
+            font-size: 1.2em;
+            color: #162938;
+            line-height: 57px;
+        }
+        .btn {
+            width: 100%;
+            height: 45px;
+            background: #162938;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            color: #fff;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img width="30" height="30" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/
+                    external-inventory-business-management-justicon-lineal-color-justicon.png"
+                        class="d-inline-block align-text-top" alt="Logo SICI" />
+                    SICI
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <img class="avatar" src="img/Logo UTEZ.png">
+        <div class="form-box login">
+            <h2>Inicio de sesión</h2>
+            <form action="#" id="loginForm">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="at-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label for="email" id="email">Correo electrónico</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required>
+                    <label for="password">Contraseña</label>
+                </div>
+                <button type="submit" class="btn">Inicia</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="fixed-bottom d-flex flex-wrap justify-content-between align-items-center mt-3 px-4 py-2 border-top text-white">
+        <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Integradora &middot; UTEZ</p>
+
+        <a href="http://www.utez.edu.mx/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img width="100" height="50" src="img/Logo UTEZ.png" alt="Inicio SICI" />
+        </a>
+
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Bonzi Buddy Team</a></li>
+        </ul>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        getParameter = (key) => {
+
+        address = window.location.search; // url de la ventana actual
+
+        // Objeto de tipo URLSearchParams
+        parameterList = new URLSearchParams(address);
+
+        // Regresa el valor del parámetro “key”
+        return parameterList.get(key);
+        }
+
+        document.getElementById("loginForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            var email = document.getElementById("email");
+
+            if (email == "veronicasanchez@utez.edu.mx") {
+                window.location.href = "admin/index.html";
+            } else {
+                window.location.href = "user/index.html";
+            }
+        });
+    </script>
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>
